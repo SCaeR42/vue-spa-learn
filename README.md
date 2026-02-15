@@ -6,6 +6,8 @@
 
 Это SPA-приложение для изучения Vue.js, созданное в образовательных целях. Включает базовую маршрутизацию и компонентную структуру.
 
+**:rocket: Демо:** [https://SCaeR42.github.io/vue-spa-learn](https://SCaeR42.github.io/vue-spa-learn)
+
 ## Технологии
 
 - **Vue 3** - JavaScript-фреймворк
