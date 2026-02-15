@@ -1,0 +1,31 @@
+// 1. Импортируем функции Bootstrap (обязательно первыми)
+// @import "/node_modules/bootstrap/scss/functions";
+
+// 2. Переопределяем стандартные переменные (напр. цвета)
+// $primary: #adff2f; // GreenYellow (Салатовый)
+// $success: #32cd32; // LimeGreen
+// $dark: #1a1d13; // Темно-оливковый (вместо чисто черного)
+// $body-bg: #f8fff0; // Очень светлый салатовый оттенок фона
+// $card-border-radius: 1rem;
+
+
+// 3. Импортируем переменные и миксины
+// @import "/node_modules/bootstrap/scss/variables";
+// @import "/node_modules/bootstrap/scss/variables-dark";
+// @import "/node_modules/bootstrap/scss/maps";
+// @import "/node_modules/bootstrapp/scss/mixins";
+// @import "/node_modules/bootstrap/scss/utilities";
+
+// 4. Импортируем весь Bootstrap или только нужные части (для оптимизации)
+@import '/node_modules/bootstrap/scss/bootstrap.scss';
+// @import '/node_modules/bootstrap/dist/css/bootstrap.css';
+
+
+// Здесь можно писать ваши глобальные стили
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+main {
+  width: 100%;
+}
