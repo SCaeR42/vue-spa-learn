@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     
-    <h2 class="mb-4">Каталог товаров</h2>
+    <h2 class="mb-4">{{ sectionName }}</h2>
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div v-for="n in 6" :key="n" class="col">
@@ -22,7 +22,7 @@
 
 <script setup>
 defineProps({
-  siteNаme: String,
+  sectionName: String,
 })
 </script>
 
