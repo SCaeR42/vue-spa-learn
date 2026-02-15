@@ -49,3 +49,55 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Деплой на GitHub Pages
+
+### Предварительные требования
+
+1. Создайте репозиторий на GitHub
+2. В файле `package.json` замените `<username>` на ваше имя пользователя GitHub в поле `homepage`
+3. Установите gh-pages:
+
+```bash
+npm install --save-dev gh-pages
+```
+
+### Деплой
+
+```bash
+npm run deploy
+```
+
+После успешного деплоя приложение будет доступно по адресу: `https://<username>.github.io/vue-spa-learn`
+
+### Настройка CI/CD
+
+Для автоматического деплоя при пуше в main ветку, создайте файл `.github/workflows/deploy.yml`:
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+```
