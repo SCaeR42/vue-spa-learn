@@ -5,7 +5,7 @@ import Catalog from '../components/Catalog.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
-  { path: '/catalog', name: 'Catalog', component: Catalog },
+  { path: '/catalog', name: 'Catalog', component: Catalog, props: { sectionName: 'Каталог товаров' } },
   { path: '/users', name: 'Users', component: Users },
 ]
 
