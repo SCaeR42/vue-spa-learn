@@ -2,7 +2,7 @@ name: Deploy static content to Pages
 
 on:
     push:
-        branches: ["master"] # Убедитесь, что ваша ветка называется именно master
+        branches: ["master"]
     workflow_dispatch:
 
 permissions:
@@ -39,7 +39,6 @@ jobs:
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  # Загружаем именно папку dist, созданную командой build
                   path: "./dist"
 
             - name: Deploy to GitHub Pages

@@ -5,7 +5,8 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: process.env.GITHUB_PAGES ? '/vue-spa-learn/' : '/',
+  // base: process.env.GITHUB_PAGES ? '/vue-spa-learn/' : '/',
+  base: '/vue-spa-learn/',
   server: {
     port: 8080
   },
