@@ -1,5 +1,5 @@
 <template>
-  
+
   <div class="card border-0 shadow-sm mb-5">
 
     <div class="img-wrap">
@@ -9,25 +9,37 @@
     <div class="card-body">
       <h5 class="card-title">{{ product.title }}</h5>
       <p class="card-text text-muted small">
-        {{ product.description && product.description.length > 120 ? product.description.slice(0, 120) + '...' : product.description }}
+        {{ product.description && product.description.length > 120 ? product.description.slice(0, 120) + '...' :
+          product.description }}
+        <br>
+        <br>
+        {{ productDescription }}
       </p>
     </div>
 
     <div class="card-footer bg-transparent border-0">
       <button class="btn btn-outline-primary w-100">Купить — ${{ product.price }}</button>
     </div>
-    
+
   </div>
 
 </template>
 
 <script setup>
+import { computed } from 'vue';
+
 const props = defineProps({
   product: {
     type: Object,
     required: true,
   },
 })
+
+const productDescription = computed(() => {
+  if (!props.product.description) return '';
+  return props.product.description.length > 120 ? props.product.description.slice(0, 120) + '...' : props.product.description;
+});
+
 </script>
 
 <style scoped>
@@ -40,6 +52,7 @@ const props = defineProps({
   display: block;
   text-align: center;
 }
+
 .img-wrap img {
   width: auto;
   max-width: 100%;
@@ -52,6 +65,7 @@ const props = defineProps({
     padding-top: 100%;
     height: 0;
   }
+
   .img-wrap img {
     aspect-ratio: 1 / 1;
   }
